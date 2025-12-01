@@ -21,6 +21,15 @@ services:
       - ollama
     restart: unless-stopped
 
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config/searxng:/etc/searxng:rw
+    restart: unless-stopped
+
 volumes:
   ollama_data:
   open-webui_data:
