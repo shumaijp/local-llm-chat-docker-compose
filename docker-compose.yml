@@ -6,7 +6,6 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    restart: unless-stopped
     deploy:
       resources:
         reservations:
@@ -26,7 +25,6 @@ services:
       - open-webui_data:/app/backend/data
     depends_on:
       - ollama
-    restart: unless-stopped
 
   searxng:
     image: searxng/searxng:latest
@@ -35,7 +33,6 @@ services:
       - "8080:8080"
     volumes:
       - ./config/searxng:/etc/searxng:rw
-    restart: unless-stopped
 
 volumes:
   ollama_data:
