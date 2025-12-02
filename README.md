@@ -30,13 +30,13 @@ docker-compose -f docker-compose-cpu.yml up -d
 
 ### 2. Install Models
 
+Available models can be found at [Ollama Library](https://ollama.ai/library).
+
 ```bash
 docker exec ollama ollama pull <model-name>
 ```
 
-Available models can be found at [Ollama Library](https://ollama.ai/library).
-
-Here are some recommended models:
+Recommended setup:
 
 | Model | Use Case | RAM |
 |-------|----------|-----|
@@ -45,7 +45,7 @@ Here are some recommended models:
 | qwen2.5:14b | High performance, RAG-ready (document analysis) | 16GB+ |
 | gpt-oss:20b | High performance, general purpose | 24GB+ |
 
-### 3. Access
+### 3. Start Using
 
 Open your browser and go to:
 
@@ -55,6 +55,12 @@ http://localhost:3030
 
 ```bash
 docker-compose down
+```
+
+To delete all stored data and models:
+
+```
+docker compose down -v
 ```
 
 ## File Structure
@@ -67,6 +73,13 @@ docker-compose down
     └── searxng/
         └── settings.yml      # SearXNG configuration
 ```
+
+Data is stored in Docker volumes:
+
+- ollama_data
+    - Ollama models and cache
+- open-webui_data
+    - Open WebUI files
 
 ## Additional Notes
 
