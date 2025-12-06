@@ -1,11 +1,11 @@
 services:
   ollama:
     image: ollama/ollama:latest
-    container_name: ollama
+    container_name: ollama-llm
     ports:
       - "11434:11434"
     volumes:
-      - ollama_data:/root/.ollama
+      - ollama-data:/root/.ollama
     deploy:
       resources:
         reservations:
@@ -22,7 +22,7 @@ services:
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434
     volumes:
-      - open-webui_data:/app/backend/data
+      - open-webui-data:/app/backend/data
     depends_on:
       - ollama
 
@@ -35,5 +35,5 @@ services:
       - ./config/searxng:/etc/searxng:rw
 
 volumes:
-  ollama_data:
-  open-webui_data:
+  ollama-data:
+  open-webui-data:
