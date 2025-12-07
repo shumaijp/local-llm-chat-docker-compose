@@ -33,7 +33,7 @@ docker-compose -f docker-compose-cpu.yml up -d
 Available models can be found at [Ollama Library](https://ollama.ai/library).
 
 ```bash
-docker exec ollama ollama pull <model-name>
+docker exec ollama-chat ollama pull <model-name>
 ```
 
 Recommended setup:
@@ -76,9 +76,9 @@ docker compose down -v
 
 Data is stored in Docker volumes:
 
-- ollama_data
+- ollama-data
     - Ollama models and cache
-- open-webui_data
+- open-webui-data
     - Open WebUI files
 
 ## Additional Notes
@@ -96,5 +96,5 @@ http://searxng:8080
 If you want to use RAG (Retrieval-Augmented Generation), install an embedding model:
 
 ```bash
-docker exec ollama ollama pull mxbai-embed-large
+docker exec ollama-chat ollama pull mxbai-embed-large
 ```
