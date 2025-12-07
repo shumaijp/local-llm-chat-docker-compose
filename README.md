@@ -54,7 +54,7 @@ http://localhost:3030
 ### 4. Stop Services
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 To delete all stored data and models:
