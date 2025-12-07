@@ -29,4 +29,5 @@ services:
 
 volumes:
   ollama-data:
+    name: shared-ollama-data
   open-webui-data:
