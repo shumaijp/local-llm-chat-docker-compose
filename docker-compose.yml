@@ -1,6 +1,7 @@
 services:
   ollama:
-    image: ollama/ollama:latest
+    # image: ollama/ollama:latest
+    image: ollama/ollama:0.13.1
     container_name: ollama-chat
     ports:
       - "11434:11434"
@@ -27,7 +28,8 @@ services:
       - ollama
 
   searxng:
-    image: searxng/searxng:latest
+    # image: searxng/searxng:latest
+    image: searxng/searxng:2025.12.7-9d3ec9a2a
     container_name: searxng
     ports:
       - "8080:8080"
